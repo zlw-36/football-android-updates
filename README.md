@@ -52,3 +52,9 @@
 [应用更新元数据](https://github.com/zlw-36/football-android-updates/releases/latest/download/android-update.json)
 
 遇到问题时，可在 [Issues](https://github.com/zlw-36/football-android-updates/issues) 提供游戏版本、手机型号、触发步骤和截图。存档保存在设备本地，请谨慎卸载或清除应用数据。
+
+## 用途与素材声明
+
+本项目用于个人编程学习与交流，不代表任何俱乐部、球员、赛事组织或足球协会的官方产品。
+
+游戏涉及的俱乐部队徽、赛事标识、球员姓名及相关素材，其权利归各自权利人所有。本项目的学习用途声明不构成素材授权；如权利人认为相关内容涉及其权益，可通过本仓库Issues联系处理。未经相应授权，请勿将相关素材用于商业用途。
