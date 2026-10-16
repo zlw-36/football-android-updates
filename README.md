@@ -1,310 +1,214 @@
 # 足球
 
-一款中文足球球员生涯模拟游戏。你将从创建球员开始，经历训练、出场竞争、转会、俱乐部与国家队赛事，直到退役，将数据与荣誉保存在自己的生涯档案中。
+中文离线足球球员生涯模拟游戏。围绕训练、逐场比赛、队内竞争、转会续约、俱乐部与国家队赛事、历史榜单及退役档案展开，采用手机优先的漫画界面。
+
+**当前公开版本：1.7.4/code48。** [下载安卓安装包](https://github.com/zlw-36/football-android-updates/releases/download/v1.7.4/football.apk)。与1.7.0—1.7.3原生兼容时支持内容增量更新；原生不兼容时按提示完整覆盖安装。先保存、不卸载、不清数据。
+
+## 当前玩法与规则
+
+- 训练分支每次+10，赛前和球队赛后获得机会，不要求实际出场，机会不累计；无训练建议功能。
+- 无体能，能力不自然衰退；玩家自然增龄，NPC未满23岁增长至23岁后固定。
+- 国足安排新秀与召唤传奇初始14岁；指导覆盖全部中国国家队候选名单，每次200万、每季5次；召唤每位50万、每季2位。
+- 出场按同位置竞争，相关球队比赛先暂停；转会由玩家主动申请，俱乐部名单无限制，费用不足可按规则自愿补足。
+- 荣誉与逐赛季记录追踪成绩季和相关球队；历史榜合并开档前可靠基线与本档正式成绩，资料不足不造数。
+- 核心领先同岗位超过10分不常规换下；领先2至10分通常踢满，偶尔末段让位。
+- 赛报内查看双方完整名单和已保存的文字关键事件；设置支持手动备份与恢复，档案展开内容独立滚动。
+- 随时可退役，档案保存在本机。游戏可离线运行；网页版停用。
+
+详细有效口径见[data/CURRENT_RULES.md](data/CURRENT_RULES.md)，实施/验证/发布状态见完整[HANDOFF.md](HANDOFF.md)。下方保留历史说明和发布过程，其中旧玩法不作为现行规则。
+
+<details>
+<summary>早期说明与历次发布记录（历史）</summary>
+
+
+# Football Career Sim
+
+Welcome to Football Career Sim! This is a browser-based simulation game where you manage a football player's career from their early days to potential stardom and retirement. Navigate through leagues, improve your player's attributes through training, make crucial career decisions, and experience the highs and lows of a professional footballer's life.
+
+## 2019/20 roster baseline
+
+New careers use 22 leagues: five newly added second divisions (England, Spain, Germany, Italy, France), 14 existing top divisions, and three merged regional leagues: European Select (Greece and Russia), Americas Select (Brazil and Mexico), and Asian Select (Japan). The domestic and regional roster data contains 388 clubs and 10,857 FIFA 20 player records. Existing full leagues and their published 2019/20 fixtures remain unchanged. For each regional league, clubs that entered a 2019 continental competition are kept, along with the strongest clubs by average FIFA 20 overall in each source league. All 160 players rated 75 or higher from the five source leagues are preserved: 15 are moved from non-retained clubs into regional squads, while the others stay at their original clubs. Regional fixtures use a generated round-robin calendar. Clubs with fewer than 16 real player records receive estimated generated players. The Squads page also includes registered squads from five major 2019 men's national-team tournaments. See `data/2019-20/SOURCES.md` for sources and attribution.
+
+Club and national-team icons are bundled locally: 332 sourced crests cover the 284 league clubs and 65 cup-only clubs, with initials shields for clubs absent from the source collection, including the newly added second divisions. The 271 bundled flag icons cover all saved player nationalities and the registered national-team tournament countries. Asset sources and attribution are listed in `public/assets/ICON_ATTRIBUTION.md`.
+
+The game uses the published domestic matchday pairings for 2019/20, while match results are simulated. The domestic leagues are tracked separately in the standings and seasonal awards. National-team tournaments now run on their recurring calendars: the 2019 participant fields come from the registered squads; later World Cups, European Championships, Asian Cups, AFCON, Copa América, Gold Cups, and UEFA Nations League editions play in-game qualifiers, finals groups, and knockouts. Qualifying group draws and scores are simulated from national-team strength, so they are not a replay of the historical qualifying match calendar. Other international breaks use friendlies. To keep the career calendar compact, some tournament weeks overlap simulated domestic rounds; an international appearance takes priority over a club appearance, and a continental club appearance takes priority over a domestic appearance for the created player.
 
-## 下载与安装
+Each simulated match now gives both teams a selected starting XI and records player ratings, appearances, goals, assists, and goalkeeper clean sheets. Assigned scorers and assists add up to the simulated team score. The game saves NPC season and career records, and individual awards compare the created player against the full simulated player pool. The Squads page shows current and archived season stats for loaded players. Older saves begin collecting NPC match stats from the next matches played; past NPC scorers cannot be reconstructed from their saved team scores.
 
-**当前版本：1.7.3 · Android 6.0 及以上**
+The Club Cups page includes the UEFA Champions League, Europa League, AFC Champions League, Copa Libertadores, and FIFA Club World Cup from the 2019 starting season; the UEFA Conference League joins from 2021, its first season. The 2019/20 UEFA group draws and the 2019 AFC/CONMEBOL entrant groups use published participants. Later entrants are selected from the in-game standings and available club roster pool. Clubs from the merged regional leagues remain eligible for the continental competitions. Group tables, knockouts, penalty shoot-outs, champions, and the created player's separate club-cup career totals are simulated and saved. Cup-only teams fill historic entrant slots when a club is outside the loaded leagues; some use estimated players because FIFA 20 roster records are unavailable. The calendar includes 65 such cup-only clubs; 42 have no FIFA 20 player records and use estimated squads. Knockout rounds now use competition-specific single-match or home-and-away ties. Two-leg ties have separate match nodes two game weeks apart, aggregate scoring and season-specific away-goal rules; the return leg alone decides advancement. Extra-time goals enter match statistics, while shoot-out goals do not. The calendar remains a compressed game-week calendar, not a historical date reconstruction.
 
-- [下载足球 APK](https://github.com/zlw-36/football-android-updates/releases/download/v1.7.3/football.apk)
+## Core Features
 
-- [查看本次更新说明](https://github.com/zlw-36/football-android-updates/releases/latest)
+Recent integration work includes 17 domestic/regional knockout cups. The five added second divisions participate in their country's existing cup. Fourteen use domestic cup names; the three merged regional leagues use original regional cups. Entrants come from the loaded league clubs, with a preliminary round and byes when needed. These are compact in-game competitions, not complete historical lower-division cup draws. Domestic and continental cup appearances, awards and champions use the same simulation and statistics pipeline.
 
-下载安装包后按安卓系统提示安装。已有旧版的玩家请直接覆盖安装，保留手机内的生涯存档；不要先卸载。当前内部版本码为47，保留原包名与签名，可覆盖安装。
+Player appearances now retain dated match reports with the original lineups, ratings, names and team names. The Match Archive page, retired-player summary and completed-career archives can display saved reports. Archives and retirement summaries also show season-by-season league, club-cup and national-team records and per-competition details. Missing historical reports from older saves cannot be recreated.
 
-游戏内容封装在 APK 中，日常游玩无需电脑或同一路由器，可离线模拟；检查更新和下载安装包需要联网。应用内可检查新版本，安装升级需由安卓系统确认。网页版已停止维护。
+New careers always create a fresh 16-year-old player from the current creation choices. Archived careers do not confer inherited abilities or a reincarnation bonus.
 
-## 1.7.3：全局阅读密度与阵容分页
+Award ceremonies use a competition-specific football manga illustration with the player physically holding or lifting the corresponding trophy. Trophy details in the honours room are framed from the same illustration, including grey previews for unearned honours. `data/award-scenes.json` maps competitions and award bases to locally bundled scenes; `scripts/award-art-prompts.json` records the individual art prompts. These are 2D illustrated trophies. Real trophies inspire the competitive scenes; regional leagues and awards without one universal official trophy use game designs. See `public/assets/ICON_ATTRIBUTION.md` and `TROPHY_REFERENCES.md` for asset usage and references.
 
-- 首页、个人数据、国足、转会、赛事、历史榜单和荣誉/档案收紧字号、卡片及分组间距，完整名称保留换行。
-- 长培养、统计与资格说明默认收起，重要警告和资格颜色/文字继续直接显示；不改变训练、费用或比赛规则。
-- 阵容每页12人，完整名单先筛选排序再分页，提供定位自己和翻页；球员数据完整保留，更改筛选/排序后回到第一页。
-- 创建页减少重复位置描述，选中位置详情仍可查看；训练页保留两列布局。短屏/大字及长榜单仍可正常滚动，不裁切内容。
-- 与1.7.0至1.7.2原生兼容时支持内容增量；其他原生版本完整覆盖安装。先保存，不卸载、不清数据；网页版继续停用。桌面验证不能代替手机真机或实际旧档测试。
+The UI now builds Tailwind CSS locally through PostCSS. Built pages use bundled CSS, JavaScript and image assets, with no runtime CDN or model API requirement. `npm install` is needed to set up build dependencies; the resulting game can run on a local server without internet access. `scripts/render-ui-preview.mjs` generates offline sample HTML previews without reading or writing browser saves. Keep `awards.html` beside its `award-art` folder; large paintings are local image files rather than embedded copies inside the HTML.
 
-## 1.7.2：训练页紧凑布局
+*   **Player Creation & Personalization:**
+    *   New careers start across 22 domestic or regional competitions built from the 2019/20 roster data.
+    *   Choose a league and starting club when creating your player.
+    *   Define your player's name, preferred position, nationality, preferred foot, kit number, skill moves (1-5 stars), and weak foot accuracy (1-5 stars) at the start of your career.
+    *   These choices influence your initial attributes and play style.
+*   **Detailed Player Attributes:** Manage and improve a wide range of skills (shooting, passing, tackling, speed, etc.) and mental attributes (morale, form).
+*   **Training System:** Choose from training drills to improve specific attributes. Injury protection and recovery are managed separately.
+*   **Match Simulation & Performance Feedback:**
+    *   Matches are simulated weekly, with your player's performance (goals, assists, rating, etc.) calculated based on their skills, form, tactical instructions, and opponent strength.
+    *   NPC starting players also receive match performances and cumulative domestic, continental, and international stats; scorers and award winners are determined from those player records.
+    *   Receive locally assembled Chinese match reports based on the player's rating, goals, assists, and match result. No API or network access is required.
+    *   After a player appearance, the saved match report shows both starting XIs, each player's rating, the score, MVP, and goal/assist icons. Older saves show the existing performance card until the next appearance creates a full report.
+*   **League System with Promotion & Relegation:**
+    *   New careers begin across 14 unchanged domestic leagues and three merged regional leagues built from 2019/20 data.
+    *   Players can change clubs through transfer offers; the historical mode does not simulate promotion or relegation because only first divisions are included.
+*   **Transfers & Contracts:**
+    *   Receive transfer offers from other clubs.
+    *   Request transfers and negotiate contracts in euros. Players can request renewal in the final two years or when market wage has increased by at least 15%, with a 12-week cooldown after signing, review the club's weekly wage and contract-length offer, and accept or reject it; expired contracts move the player to the free-agent pool.
+    *   Build a club history as you move between teams.
+*   **Player Development & Traits:**
+    *   Unlock special traits (e.g., Clinical Finisher, Playmaker Vision) by achieving attribute milestones or specific in-game accomplishments. These traits provide passive bonuses or affect in-match performance.
+*   **Seasonal Awards & Career Achievements:**
+    *   Earn league champion medals, promotion trophies, and Champions League, Europa League, Conference League, AFC Champions League, Libertadores, Club World Cup, and national tournament winners' medals.
+    *   Win Top Scorer, Most Assists, Player of the Season, Young Player, Club Player of the Year, Team of the Season, Golden Boy, Ballon d'Or, World Player of the Year, Golden Boot, Playmaker, Golden Glove, and Player of the Tournament awards. The Ballon d'Or is awarded to the top player by a combined season score for rating, goals, assists, and appearances across league, cup, and international matches.
+    *   Browse team trophies, individual awards, and career milestones in the Honours Hall.
+*   **Career Statistics:**
+    *   Review career totals, clean sheets, current-season domestic and international performance, previous season summaries, and competition-by-competition records in Career Stats.
+*   **Player Interactions (Manager & Media):**
+    *   Engage in conversations with your manager about your form and role.
+    *   Handle post-match media interviews with preset questions selected from the player's match performance.
+    *   Your choices impact relationships, morale, fan support, and press relations.
+*   **International Call-ups & National Team Play:**
+    *   Perform well to earn a call-up to your national team.
+    *   Play qualifier groups, tournament finals, and knockout rounds in the major men's national competitions scheduled after 2019.
+    *   Review qualification tables, fixtures, results, and champions on the International page.
+*   **Continental Club Competitions:**
+    *   Play through the Champions League, Europa League, Conference League, AFC Champions League, Copa Libertadores, and FIFA Club World Cup.
+    *   Review group tables, fixtures, results, knockouts, and champions on the Club Cups page.
+*   **Injury Management:**
+    *   Players can get injured during matches or training.
+    *   Manage recovery through rest and physio sessions. Injury duration and severity vary.
+*   **Individual Tactical Instructions:**
+    *   Set specific tactical instructions for your player before each match (e.g., "Shoot on Sight," "Aggressive Tackling") to influence their in-game behavior.
+*   **NPC Player Development & Aging:**
+    *   NPCs below 23 gain one year of age per season; NPCs aged 23 or older keep their current age. Abilities do not decline naturally. Strong performances can unlock limited potential: ordinary players cap at 85, selected stars around 90, and a small set of superstars and top legends at 95 or above. The user player continues aging normally. See data/NPC_RULES.md.
+*   **Game Persistence:** Your career, player stats, tournament fixtures, and results are automatically saved in IndexedDB, allowing the larger real-world rosters to persist without the small localStorage size limit.
 
-- 去除每个满值项目下重复的“已达上限”文字，仍显示数值和灰色禁用加号。
-- 六维训练两列排列，小分支全部展开，星级训练直接显示；训练说明默认收起，减少标题和空白。
-- 加号保留44px点击区域；短屏或大字体仍可自然滚动，不裁掉任何项目。
-- 每次分支+10、星级+1、赛前及赛后机会不累计和伤病限制均保持。
-- 与1.7.0/1.7.1原生兼容时支持内容增量更新；其他原生版本按提示完整覆盖安装。先保存，不卸载、不清数据。网页版继续停用；未进行手机真机安装测试。
+## Technologies Used
 
-## 1.7.1：全屏赛报与联赛收官总结
+*   **Frontend:** React, TypeScript, Tailwind CSS
+*   **Build/Dev:** Vite (implied by `index.html` structure and modern module usage)
 
-- 赛后报告铺满应用页面，顶部保留继续/下一场按钮；正文滚动，比赛概览和双方完整名单在报告中切换。
-- 各联赛所有球队完成完整赛程后，即结算联赛个人奖与玩家冠军并生成总结，不等整体换季；补赛未完成则等待。
-- 同届联赛不在换季重复发奖或增加冠军次数；赛季累计、年龄和升降级仍按原流程处理。
-- 与1.7.0原生兼容时支持内容增量；更早不兼容版本按提示完整覆盖安装。先保存，不卸载、不清数据。网页版继续停用；未进行手机真机测试。
+## Getting Started
 
-## 1.7.0：赛报、档案与核心出场时间
+1.  Install Node.js and npm if they are not already installed.
+2.  Run `npm install` in the project directory.
+3.  Run `npm run dev` and open the local address printed in the terminal.
+4.  Match reports and media questions use built-in text templates; no API key is required.
 
-- 生涯档案限高并独立上下滚动，标题、删除和收起按钮保留在外面；世界杯冠军奖杯放大。
-- 同位置领先超过10分不常规换下；领先2至10分通常踢满，偶尔在75—85分钟让位。俱乐部与国家队共用，加时留场继续踢。
-- 赛报内切换比赛概览和双方完整名单；文字关键事件只读取保存记录，旧赛报缺失细节不补造。
-- 设置内支持手动导出及恢复生涯备份，校验、覆盖确认和失败回滚；Android系统文件选择采用分块读写。
-- 增加评奖分项、赛事规则和球队机会说明，可选生涯目标不奖励费用或能力，无训练建议。
-- 新增原生文件及返回接口，本次必须完整APK覆盖更新。先保存，不卸载、不清数据；后续原生兼容更新继续可用内容增量。
-- 已进行桌面类型、构建、回归及移动尺寸界面检查；手机安装、系统文件选择、实际旧档和原生返回键未真机验证。没有宣称整体模拟统一提速。
+## How to Play
 
-## 1.6.5：国足召唤年龄与指导范围
+1.  **Create Your Player:** On your first launch (or after selecting "New Game"), you'll be prompted to create your player, defining their name, position, nationality, and key skills.
+2.  **Dashboard:** The main hub where you can see your player's status, upcoming fixtures, game log, and advance to the next week.
+3.  **Training:** Select training drills to improve your player's attributes. Manage injury protection and recovery.
+4.  **League Table:** Track your team's progress and standings in the league.
+5.  **Transfers:** Manage transfer offers, request moves, and view contract details.
+6.  **Career Stats:** Review lifetime totals, archived seasons, and competition records.
+7.  **Honours Hall:** Review your team trophies, individual awards, and career milestones.
+8.  **Advance Week:** Progress through the season, simulating matches and triggering game events.
+9.  **Interactions:** Respond to manager talks and media interviews that pop up. Your choices matter!
+10. **Tactical Focus:** Set your player's individual tactical instruction for the upcoming match from the dashboard.
 
-- 国足项目新安排的真实新秀和召唤传奇初始均为14岁，未满23岁每季增龄1岁，之后保持；已安排人物不批量重置年龄。
-- 传奇指导覆盖全部中国国家队候选球员，无需已入选；按导师位置匹配、能力降序排列，仅对有收益的对象收费。
-- 指导每次€2,000,000、每季5次；召唤每位€500,000、每季2位，已有收益和身份去重规则保持。
-- 类型、生产构建及APK资源/原签名检查通过；未进行本轮手机实测。与1.6.3/1.6.4原生兼容时可增量更新，其他版本按应用提示完整覆盖安装。先保存，不卸载、不清数据。
+## Contributing
 
-## 1.6.4：晋级与参赛资格一致性修复
+Contributions are welcome! If you'd like to contribute, please fork the repository and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
 
-- 亚洲杯末阶段积分榜优先显示，第一阶段成绩默认收起；后续阶段取得或暂列的资格不再被标成旧组的“正赛直通区”。
-- 资格由对应阶段排名与同一推进逻辑计算；已获资格球队不占重复席位，非洲杯保留主办国参加资格赛的特殊规则。
-- 修复第一阶段名额已满时晋级球队可能同时被记录为淘汰；附加赛、主办国和历史阶段资格显示具体来源，未完成的预测不写成已获资格。
-- 联赛洲际赛名额同分顺序与联赛积分榜、季末排名一致；下赛季资格预测与世俱杯等独立资格区分说明。
-- 小组赛结束后的标签说明该阶段成绩；欧国联A级四强路径单独命名。
+---
 
-## 验证及更新
+## Five-country league tiers
 
-56项回归通过：截图同类跨阶段情况、旧末阶段名单混入已晋级队、世界杯配额及附加赛、各洲杯/欧国联完整资格名单、欧冠欧联欧协联及亚冠区域名额、小组第三名、赛前暂停及淘汰赛回归。数据来自独立测试，不是用户手机存档；没有真机验证，不声称赛制完全等同现实。
+The English Championship, Spanish Segunda División, German 2. Bundesliga, Italian Serie B and French Ligue 2 now include 104 clubs with Chinese display names, full league fixtures and player statistics. Fifty added clubs satisfy rookie eligibility (strongest eleven mean ≤70); 121 clubs across 14 leagues are now available at creation. Domestic cups include both tiers. Promotion/relegation stays within each country using fixed automatic places (England/Spain/Italy 3, Germany/France 2); playoffs remain to be implemented. Existing active careers add missing second divisions at the next season boundary, while unstarted careers can add them immediately. See the updated data sources for roster gaps and format limits.
 
-已核验与1.6.3原生指纹相同，支持增量更新，旧原生按应用提示完整覆盖安装。请先保存，不卸载或清除数据。网页版继续停用。
+## Contract and market progression
 
+Player value is recalculated after training, matches, weekly advancement and load from positional ability, sustained ratings, age and a bounded reputation factor. New transfer fees scale with market value and remaining contract years; wage and signing bonus use the same value/ability basis. Transfers now list searchable, ability-compatible clubs and allow contacting them directly. Budget and roster checks still apply; an existing signed wage remains fixed until a new agreement is accepted. Free agents can negotiate outside the transfer window. An accepted transfer or renewal withdraws outdated pending transfer offers, and expired or closed-window contracted transfers are rejected. First adoption calibrates club transfer funds once by 20% of the original FIFA squad valuation; this is a game estimate, not a claim about actual club cash. Club salary affordability checks are an annual provision rather than a complete club wage ledger. A separate personal euro wallet now records player wages, signing bonuses and medical spending.
 
-## 1.6.3：统一加载页与主界面背景大小
+## Competitive team selection
 
-- 加载页与主界面共用同一背景显示规则：铺满可用屏幕，等比缩放，居中裁切。
-- 主界面同步调整裁切位置；加载图固定按视口显示，避免内容高度影响背景大小。
-- 原生活动窗口启动背景按窗口大小自适应，采用相同的cover/center计算，不再只依赖固定尺寸区域。保留现有插画和中央按键位置。
+The controlled player has no guaranteed starting slot. Five formation templates compete by positional ability, natural/alternative position fit, form and a bounded recent-appearance rating bonus; injured players are excluded. Limited swaps/replacements improve the draft assignment. The match squad contains the selected starting eleven plus up to seven bench players, balanced between keeper/defence/midfield/attack. The depth-chart panel shows role competitors, rank and selection expectation. An absolute key player must rank first, meet the current league positional first-choice reference, lead compatible rivals by at least two selection points, and actually qualify for the starting lineup. Other starters are regular players; leading bench options are rotation players, other bench options are substitutes, and omitted players are fringe players. Backup keepers are labelled separately. Roles are live assessments, not immutable contract promises.
 
-## 更新方式
+Substitution planning gives actual minutes to introduced players (up to three in 2019, five from 2020, with a simplified seven-player bench across competitions). Clearly superior starters leave later. Individual activity scales by minutes; only actual participants get appearances and growth credit. Goal and assist events select only players on the pitch at that minute. Used subs participate in both career and competition records; unused subs and omitted players receive a team report without false appearances. Extra-time minutes extend only those still on the pitch. These are game selection/rotation rules, not a full competition-specific matchday-registration or fatigue model.
 
-原生启动代码变化，本次需要完整APK覆盖安装。请先保存生涯，不要卸载或清除数据。原签名、包名与图标保持；后续原生兼容版本仍可增量。
+## Personal euros and medical care
 
-原生编译、APK资源签名与公共下载核验；桌面手机宽度截图不能替代实际手机效果。Android12及以上最初系统启动遮罩受系统限制，活动窗口/前端阶段使用上述规则。网页继续停用。
+New careers start with €5,000 personal funds. Signed players receive their current weekly wage at game-week settlement, keyed by year/week so same-week matches or repeated settlement do not pay twice. Signing bonuses are credited on accepted transfers; transfer fees belong to the selling club. Old active saves initialize the wallet once and do not reconstruct unrecorded past earnings. Gross personal income is separate from the approximate club transfer-budget model.
 
+The Training page medical centre charges €2,000 to shorten one injury by two weeks (once per injury), €10,000 to clear the current injury, or €100,000 to clear it and grant permanent protection from training and match injuries for this career. Insufficient balance, redundant cure or duplicate permanent purchase does not charge money. The old free protection toggle is removed. Protection, balance and income/spending totals persist through saving, transfers and career archives; a separate new character starts afresh. There is no stamina meter, fatigue penalty or low-stamina participation restriction. Form is competitive sharpness, and weekly training quotas are scheduling rules.
 
-## 1.6.2：放大手机加载背景
 
-- 手机前端加载背景改为等比铺满屏幕，减少空边，放大五位球星；按屏幕比例裁切边缘。
-- 最初加载游戏代码的画面同步采用相同铺满方式，避免前后图片大小跳变。
-- 原生启动图由240×426dp调整为360×640dp，放大约1.5倍并保持竖幅比例。
+## 最新Android发布：足球1.2.0（2026-10-11）
 
-## 更新方式
+[下载安装包](https://github.com/zlw-36/football-android-updates/releases/download/v1.2.0/football.apk)，约166MB。合并整体模拟/界面/图片资源优化与统一历史累计榜，保留原签名与离线游玩。1.1.3兼容内容增量约27.8MB变更资源；名称足球，版本码29。完整回归194项、电脑浏览器80项通过，未手机安装/更新实测。网页版停用。当前功能与限制以HISTORICAL_LEADERBOARDS_REPORT.md及ANDROID_PACKAGING.md为准，上方早期英文技术描述有历史规则，不代表当前已删除模块重新启用。
 
-原生启动资源变化，本次必须完整APK覆盖安装。请先保存生涯，不要卸载或清除应用数据。原签名、包名与图标保持；后续原生兼容的版本仍可增量。
 
-生产构建、Android资源与APK签名/包内资源核验；实际手机启动效果待验证。Android12及以上最初系统启动遮罩受系统限制，完整五人背景在游戏加载页显示。网页版继续停用。
+## 1.5.0优化（已发布）
 
+当前公开版本为1.5.0。本轮新增六维能力分支与实际出场后的单次训练、每分支+4；传奇指导费用改为€5,000,000；五位球星漫画加载背景、紧凑赛事搜索弹窗、联赛质量评奖与等比奖杯陈列。本轮已发布完整APK，网页版保持停用。详细规则与验证以HANDOFF.md最新追加章节及artifacts/optimization-next/REPORT.md为准。
 
-## 1.6.1：指导费用、模拟反馈与赛事排序
 
-- 国足传奇指导调整为固定每次€2,000,000，界面说明、余额判断和实际扣款同步。
-- 每赛季仍最多5次；指导对象、潜力与能力收益保持。
-- 旧数据中的建设等级不会抬高传奇指导单次费用；过去的支出记录按实际历史金额保留。
+当前APK下载：https://github.com/zlw-36/football-android-updates/releases/download/v1.5.0/football.apk。此次原生资源改变，先保存生涯后覆盖安装，不卸载。发布证据见HANDOFF第122节。
 
-- 模拟时删除底部黑色文字说明，只保留模拟按钮内的转圈；重复点击保护保持。
 
-- 国家队赛事选择列表按正赛、预选赛、友谊赛排序；亚洲杯等各洲杯正赛排在预选赛前，世界杯正赛仍优先。
+## 本地实现与发布1.5.1（2026-10-14）
 
-## 更新说明
+主界面五人漫画背景、创建生涯即时转圈和防重复提交已完成。训练改为所属球队比赛结束解锁一次，无需实际出场、不累计；单分支+4及伤病限制保持。详见HANDOFF第123节和artifacts/release-1.5.1；正式发布状态以频道及交接最终记录为准。网页版持续停用。
 
-已核验与1.6.0原生指纹相同，支持内容增量更新。更旧保存协议版本需完整APK覆盖安装。请先保存，不卸载、不清数据，勿降级读取新格式存档。
 
-本轮核对统一报价/扣款路径，类型和打包检查；未新增或运行测试套件，手机实际支付未验证。网页版继续停用。
+## 当前发布1.5.2（2026-10-14）
 
+中央留空菜单、赛前/赛后各可训练一次（不累计）及能力组默认收起已发布。与1.5.1原生兼容，更新设置检查1.5.2；公共HTTPS及签名核验通过，手机训练行为与真实存档尚未实测。详见HANDOFF126；网页版持续停用。
 
-## 1.6.0：按键响应、分段保存与训练调整
 
-- 优化全局保存：球队独立存储，小操作只写变化队伍；完整保存分段处理，让浏览器在保存期间有机会响应输入，仍在同一事务内提交，失败整体回滚。
-- 修复对应赛事缺失的晋级图无法显示却锁住页面的路径。
-- 自动保存避开连续点击、输入和滚动；返回主界面先显示保存反馈。
-- 手机后台恢复的绘制等待增加兜底；模拟/保存显示处理中状态，减少触摸点击额外等待。
-- 删除个人数据末尾“分赛事统计”独立区域，保留总计、当前赛季和逐赛季记录。
+## 当前发布1.6.0（2026-10-14）
 
-- 分支训练每次+10、99封顶；所有六维小分支直接展开，移除大项展开/收起键。赛前/赛后单次机会不累计，花式动作和非惯用脚仍每次+1星。
+分队保存和按键响应优化、删除个人分赛事统计、训练分支+10与全部展开已发布。本次保存协议变化需完整APK覆盖安装，先保存，不卸载/清数据，不降级读取新存档。保持原签名/图标/包名；公共下载及摘要核验通过，桌面保存诊断见artifacts/input-response，手机实际体验未测。详见HANDOFF129；网页版停用。
 
-## 更新方式
 
-本版保存协议变化，必须完整APK覆盖安装。请先保存生涯，不要卸载或清除应用数据。保留原签名、包名与图标；兼容读取旧存档，迁移后不要降级旧版读取新存档。以后兼容的版本仍可使用增量更新。
+## 当前发布1.6.1（2026-10-14）
 
-## 实测范围
+传奇指导固定费用200万/每季5次；模拟时去掉底部黑色说明，按钮转圈保留；国家队赛事正赛/预选赛/友谊赛排序，世界杯正赛优先。支持1.6.0原生增量更新，更旧协议版本按完整APK安装。公共HTTPS和摘要核验通过，真机未测，详见HANDOFF130；网页版停用。
 
-独立桌面Chrome、4倍CPU节流、18698名球员，实际IndexedDB各3次：旧整体保存中位331.5ms、最大事件循环间隔330.9ms；新小操作27.4ms/26.4ms；新完整保存748.8ms/89.9ms。完整保存总耗时增加，连续阻塞缩短；不是手机INP或真机速度保证。
 
-旧格式迁移读回一致、单队改动保留、注入中途失败后原存档回滚核对通过；最终类型检查与构建通过。手机实际存档、后台恢复及各按钮体验尚未实测，未重新跑完整45岁生涯。网页版继续停用。
+## 当前发布1.6.2（2026-10-14）
 
+手机加载背景等比铺满、原生启动图放大约1.5倍；原生资源变化需完整APK覆盖安装，先保存，不卸载/清数据。签名、资源和公共下载核验通过，手机宽度静态截图6张，真机未测。详见HANDOFF131；网页版停用。
 
-## 1.5.2：中央菜单与赛前、赛后训练
 
-- 主界面漫画背景调整：五位球星围绕四周，中央留出真实菜单按键区域，手机与宽屏分别适配。
-- 继续模拟停在所属球队比赛前，可训练一次；比赛结束后再可训练一次，无需实际出场。
-- 训练机会不累计，同一场比赛的赛前暂停只解锁一次，避免反复继续或读档刷训练。
-- 训练页默认收起全部能力大项，不默认展开射门；点击能力可展开，再点击可收起。
-- 保持分支训练每次+4、星级+1、原有上限和伤病限制。
+## 当前发布1.6.3（2026-10-14）
 
-## 更新说明
+加载页与主界面统一视口全屏cover/center，原生活动窗口背景按bounds缩放。原生变化需完整APK覆盖安装，先保存，不卸载/清数据。12张前端手机宽度截图、6对背景范围/模式/中心一致，原生编译及签名/公共下载检查通过，真机未测。完整记录HANDOFF132，网页停用。
 
-已核验与1.5.1原生指纹相同，支持内容增量更新；保持原包名、签名和离线资源。请先保存生涯，覆盖安装时不要卸载或清除数据。更旧原生版本按应用提示下载完整APK。
 
-本地类型检查和生产构建通过；主菜单10张桌面模拟尺寸及日夜截图无未捕获异常。本轮未运行新的训练行为测试或真机存档验证。网页版继续停用。
+## 当前发布1.6.4（2026-10-14）
 
+修复亚洲杯跨阶段资格误标、自动队重复席位和首阶段已晋级同时记淘汰；当前阶段优先、历史收起、附加赛/主办/暂列资格来源明确；洲际联赛同分资格与表格及季末排名一致。56回归与15届资格路径、12静态截图通过，1.6.3可增量，真机未测。详见HANDOFF133及artifacts/qualification-audit/REPORT.md，网页停用。
 
-## 1.5.1：主界面漫画背景、创建反馈与球队赛后训练
 
-- 主界面采用C罗、梅西、内马尔、卡卡、贝克汉姆密集漫画背景，手机与宽屏分别适配，中间不留空。
-- 创建生涯立即显示转圈，锁定按钮避免重复创建；失败后保留输入并允许重试。
-- 所属球队比赛结束即可获得一次训练机会，无需实际出场，未出场也适用；只保留一次、不累计。国家队关联比赛同样适用。
-- 分支训练继续每次+4、99封顶；星级+1，伤病限制和独立医疗规则保持。重复入账不重复解锁，零分钟不伪造出场。
+## 足球1.6.5已发布（2026-10-15）
 
-## 更新说明
+- versionCode43，releaseId413628614；国足新安排新秀及召唤传奇初始14岁，传奇指导覆盖全部中国国家队候选球员，保留位置匹配/能力排序/收益筛选。指导200万每次、每季5次；召唤50万每位、每季2位。
+- 下载：https://github.com/zlw-36/football-android-updates/releases/download/v1.6.5/football.apk
+- 本地artifacts/android/apk/football-1.6.5-update-channel-debug.apk，171243421字节，SHA256 2b0ee61bb015aa1325ca55e6ac26e82e613b01fd2059ddda75cc9aa8e4d215a5。原包名/图标/签名保持；原生指纹与1.6.4相同，14变化/940复用，变化GZIP307555字节（实际手机下载取决于缓存）。
+- 类型检查、生产构建、APK资源和原签名通过；服务器APK完整摘要及大小、公开HTTPS频道/签名清单/4代码GZIP对象范围/大小、APK206前缀/总大小通过。未匿名全量重下APK，未进行本轮行为测试、真机安装或真实存档验证。
+- 远程README更新并精确字节回读一致；公开核验后删除旧1.6.4 release/tag与经绝对E路径/SHA核对的旧正式APK及新版上传stage重复APK；全部16资源桶保留。网页版继续停用。
+- 所有发布证据artifacts/release-1.6.5；完整HANDOFF历史前缀保留。所有授权发布完成，无本轮遗留运行命令。下一步手机设置→应用更新检查1.6.5，先保存、不卸载、不清数据；1.6.3/1.6.4兼容原生可增量，其余按应用提示完整覆盖安装。
 
-与1.5.0原生指纹相同，支持内容增量更新；更旧的原生版本按应用提示使用完整APK覆盖安装。请先保存，不要卸载或清除数据。
 
-本轮9项现有规则专项、类型检查、生产构建与APK资源签名检查通过。主界面已有桌面浏览器手机尺寸及日夜模式截图，创建界面确认即时反馈和重复点击保护。手机安装、真实用户存档与增量更新尚未实测。网页版保持停用。
+</details>
 
 
-## 1.5.0：加载提速、能力分支与赛后训练
+## 1.7.4：单行滑动分类
 
-**本次原生启动资源变化，需要完整APK覆盖安装。先保存生涯，不要卸载或清除应用数据。**完整包169239586字节（约169.2MB），名称“足球”、包名、桌面图标与原签名保持。后续原生兼容的版本仍可使用内容增量更新。
-
-- 加载页采用C罗、梅西、内马尔、卡卡、贝克汉姆漫画招牌动作，错落安排，文字独立；主界面背景保留。显示真实加载阶段，失败保留存档并可重试。
-- 旧档校准按国籍一次建索引，避免每支国家队重新扫描世界球员。相同状态、随机种子与时钟的9组完整状态摘要一致，该热点中位耗时减少约73%—78%；这不是手机或整体模拟提速比例。
-- 六维能力细分为独立分支，门将另有专项分支；位置相关能力影响出场竞争、进球、助攻及防守。
-- 实际出场后可训练一次，不累计；替补出场也有效，未出场不给机会。单个分支每次+4、最高99；花式/非惯用脚+1星、最高5，医疗独立。旧档初始化保持原能力和统计，下一场实际出场后获得机会。
-- 传奇指导每次费用€5,000,000，每赛季5次；当前国脚、位置和收益规则保持。旧每次1千万规则属于下面1.3.1历史记录。
-- 训练采用紧凑数值条，小加号28px视觉方块保留44px点击范围；赛事选择使用分组搜索弹窗，完整名称和夜间模式可读。
-- 全球评奖明确联赛强弱与对手相对实力，修正评分权重相除抵消；冻结成绩季依据。本赛事奖项和原始数据保持原口径，旧冻结评选不追改。
-- 61项奖杯等比陈列，修正边界和大小，6款主要奖杯核对官方尺寸；完整领奖插画仍只在实际获奖时显示。
-
-完整回归228项、后续35/47项专项（有重叠）、141项生产浏览器、12项静态预览和80个服务入口检查通过；本次APK资源、版本、原签名、图标与更新元数据检查通过。桌面29年测试生涯加载首页中位约2.94秒，模拟服务最长约2.07秒；它们不是手机耗时，真实手机安装、冷启动及用户存档尚未实测。网页版保持停用。
-
-## 1.4.0：启动、无限名单、评奖和荣誉优化
-
-**本次原生启动画面改变，需要完整APK覆盖更新。请先保存生涯，不要卸载或清除应用数据。**完整包168611149字节（约168.6MB），原签名、名称、包名和桌面图标保持。安装新版后，后续原生兼容的内容更新仍可按变化文件下载。
-
-- 开球主题启动页，代替缩小桌面图标；实际载入提示，不设人工等待。
-- 俱乐部名单不设人数上限，不为签约强售NPC；比赛及国家队阵容仍按实力、位置和伤病选择。
-- 新档恢复102名有来源的未分配球员；旧容量溢出仅有明确原队/身份/合同证据时恢复，不撤销正常转会，不造历史比赛。
-- 只保留联赛年度最佳球员，旧赛季/年度最佳合为同组，同季去重、跨季保留，荣誉殿堂和退役档案同步。
-- 评奖看位置贡献、有效出场、正式赛事与实际荣誉；提名及最终口径一致，FIFA不以声望75拒绝优秀赛季。最佳阵容按具体位置选十一人。
-- 最佳阵容采用有立体金属质感的足球员/十一星月桂奖座和对应领奖插画。
-- 相同状态对照：赛事总结中位耗时约减少63%，年度评选中位约减少10–12%。这不是全部模拟流程统一提速；电脑135个服务节点最长约2.02秒，手机尚未计时。
-
-本轮220项完整回归、最后旧字段保护专项9项、15项电脑浏览器检查、135个服务节点检查及最终APK签名/版本/资源核验。物理手机、实际用户存档及冷启动尚未实测。游戏网页版继续停用。
-
-## 1.3.1：国足召唤传奇与费用调整
-
-- 国足新增“召唤传奇”，首批孙继海、范志毅、郑智、邵佳一、杨晨、李铁。每位€500,000，每季最多2位，同人每生涯一次。
-- 26岁加入成名俱乐部：曼城、水晶宫、广州、北京国安、法兰克福、埃弗顿；按正常实力与位置参与国足选拔，不保证首发。
-- 郑智复用原身份和比赛记录；新人物本档从0场开始，公开履历不会被写成已经取得的本档荣誉。
-- 传奇指导改为每次€10,000,000、每季最多5次，成长效果保持；失败不扣款。
-- 付款按钮统一使用“费用”，余额与资金说明统一。
-
-兼容1.3.0内容更新：14个变化文件，932个复用，压缩下载2438655字节（约2.44MB，不含清单与网络附加）。完整APK166121302字节（约166.1MB），原签名、图标和包名保持。
-
-本轮类型检查、生产构建和APK资源/版本/签名检查通过；未进行本轮新增功能自动回归、浏览器或真实手机/用户存档测试。以下旧版验证数字属于对应旧版，不能作为1.3.1新增功能的实测证据。
-
-## 1.3.0：传奇、巅峰球星与赛事荣誉完善
-
-- 历史榜扩为七类，新增欧冠冠军次数；每位球员仍是一条合并累计记录。
-- 真实历史截止2019年8月1日，金球/FIFA历届得主补齐至2018；正式生涯进球15人、完整助攻2人、世界杯288人、欧冠进球31人、欧冠冠军51人。覆盖不是全球完整，缺失数据不编造，不按同名猜NPC。
-- 欧国联小组赛与决赛阶段的个人数据、球员榜、新收官总结合并。小组积分和淘汰赛仍按赛制展示。
-- 荣誉顺序为冠军、金球、世界足球先生、金童、金靴、助攻王、最佳球员、最佳阵容、其他；各类按赛事含金量陈列，重复荣誉保留历次年份、球队和数据。
-- 新增29位2000—2018时代传奇，总41位，26岁、能力90—95，匹配成名俱乐部和国家队。
-- 57位现有球星补正至游戏巅峰目标87—93，同步具体位置属性；原年龄、球队、合同和统计保留，旧档一次迁移，无需重新开档。能力是游戏设定，原始2019资料不覆盖。
-
-211项回归和116项电脑浏览器检查通过。从1.2.2更新的17个变更文件压缩下载2467050字节（约2.47MB，不含清单与网络附加），929文件复用；完整APK约166.3MB。
-
-支持兼容应用内内容更新，完整APK仍可覆盖安装。手机安装、实际存档和网络体验未真机验证；网页版继续停用。
-
-## 1.2.2：欧冠历史进球与旧档NPC累计恢复
-
-历史榜单现有六类：金球奖、世界足球先生、正式比赛进球、正式比赛助攻、世界杯决赛圈进球、欧冠正赛进球。历史与本档成绩合并展示，每位球员只显示一条累计记录。
-
-旧档在读取时一次性恢复仍保留的NPC俱乐部职业汇总、正式赛事记录及赛事总结；重复来源按赛事去重，不重置原数据，无需重开生涯。已清除的早期明细无法凭空恢复。
-
-真实历史截止2019年8月1日：两项大奖历届得主补齐至2018年；完整正式生涯进球基线4人、助攻2人，世界杯118人，欧冠11名代表球员，尚非全球完整资料。其他球员的本档正式成绩正常累计；欧冠不含资格赛、欧联或亚冠。
-
-兼容1.2.1的内容更新：14个变化文件、931个复用，压缩下载302032字节（约302KB，不含清单和网络附加）；完整APK约166.1MB。199项回归和93项电脑浏览器检查通过，手机安装、下载和实际旧档恢复尚未真机验证。
-
-## 1.2.1：累计数字与评选成绩球队修复
-
-历史榜累计数字不再带大于等于符号。旧奖项空球队记录在加载存档时按成绩季资料恢复，新评选保存实际成绩季对应球队，不使用现在的球队或公布时球队替代旧赛季；不重复增加获奖次数。21项针对性回归、83项电脑浏览器检查通过，手机存档未直接读取；历史依据全部缺失时不能凭截图猜球队。保留兼容内容增量更新和完整APK覆盖安装。
-
-## 1.2.0：流畅性、资源与历史榜单更新
-
-- 合并模拟阵容选择、操作反馈、旧档缺失说明、日期与夜间界面等优化；保留现有玩法、能力标准、训练收益和评奖权重。
-
-- 大型页面按需加载、稳定球员数据独立拆包。78张人物/漫画图使用手机适配WebP，保留原稿，奖杯、队徽和国旗细节不降级。完整APK约166MB，上版约359MB。
-
-- 底栏新增历史榜单：金球奖、世界足球先生、进球、助攻、世界杯进球。历史与本档成绩合并，一位球员一条累计记录，支持搜索、排序、并列名次、玩家定位和分页。
-
-- 历史资料截止2019年8月1日。两类大奖完整收录至2018年，世界杯基线118人；进球/助攻完整基线目前仅梅西与C罗，其他球员用文字说明历史资料不足，数字表示已记录累计，不冒充完整历史。
-
-- 累计记录跳过零数据，首次写入才复制账本，赛前准备不反复复制多年数据；不会减少比赛、统计或暂停节点。
-
-原生指纹与1.1.3兼容，可通过应用内内容更新；本次首次资源优化需要下载新的WebP与拆分代码，不能按以后的微小界面更新估算容量。保留完整APK作为覆盖安装入口。194项回归、80项电脑浏览器检查通过；手机安装、增量更新及实际网络体验尚未真机验证。
-
-## 游戏内容
-
-### 你的球员生涯
-
-- 自选姓名、国籍、细分场上位置、漫画风形象和起步俱乐部。
-
-- 训练提升能力；比赛表现受个人能力、位置、对手与球队实力影响。
-
-- 根据队内同位置竞争确定首发、替补与出场时间；玩家年龄随赛季增长。
-
-- 合同、转会报价、身价、俱乐部预算与个人欧元系统；可自愿补足转会费。
-
-- 伤病治疗和长期保障，设置中可随时确认退役并归档。
-
-### 俱乐部与国家队赛事
-
-- 五大联赛及次级联赛，并扩充希腊、俄罗斯、墨西哥、巴西、日本等联赛；共506支活动联赛俱乐部。
-
-- 俱乐部杯赛、洲际赛事、国家队预选赛与各洲大赛；支持小组积分、淘汰晋级图及多种赛制。
-
-- 当前赛季进球、助攻、抢断、零封等榜单，以及国家队积分排名。
-
-- 模拟在下一场比赛前停下，点击开始比赛后查看赛报；重要提名、获奖、转会和赛事出局等事件触发提醒。
-
-### 数据、荣誉与美术
-
-- 个人数据可切换全部赛事和具体赛事；逐赛季记录覆盖俱乐部各项比赛。
-
-- 荣誉殿堂按奖项分组展示奖杯，重复获奖列出对应年份与已保存表现。
-
-- 金球奖、世界足球先生、金童奖等综合评选，结合赛事级别、表现与球队成绩。
-
-- 漫画风球员和事件插画；对应的夺冠或个人获奖插画仅在实际获得该荣誉时展示。
-
-- 中国国籍生涯有“国足”板块，支持真实新秀培养、传奇指导与国家队发展。
-
-- 手机布局、可自定义底部导航、夜间模式与本地存档。
-
-## 模拟设定与说明
-
-本作采用适合个人生涯游玩的模拟规则，部分资格名额、赛程和赛事结构做了简化，并非现实所有赛事规则的逐项复刻。部分历史阵容的能力、潜力与未知生日为估算。NPC按当前游戏设定成长至23岁后固定年龄，并可根据表现提升能力；玩家生涯按原规则自然增长年龄。
-
-1.1.0更新：新增文件级增量更新。首次需完整覆盖安装本版，之后兼容的内容更新仅下载新增或修改文件，未变化的图片与资源复用本地；支持原应用证书签名、文件校验、断点续传、保存生涯后应用和启动失败回退。安卓底层或存档读写协议变更仍需完整APK。资源存储发布content-store-*承载更新文件，不是其他版本安装包。编译和本地签名内容包准备已核对，尚未手机真机增量下载或启动回退验证。
-
-1.1.1更新：获奖记录显示评选赛季效力球队；转会腾位展示现有人数、容量及必需转出人数；生涯档案优先排列冠军、金球奖、世界足球先生、金童奖。已安装1.1.0可在设置中使用内容增量更新，本次变更文件压缩下载约2.42MB，未变化资源复用本地；此为构建测算，未进行手机真机下载验证。
-
-1.1.2更新：预选赛榜单区分已有正赛资格与凭预选赛成绩直通；前阶段已晋级球队明确不占本阶段名额，图例说明不同资格来源。支持兼容内容增量更新，未进行本轮手机真机验证。
-
-1.1.3更新：球队阵容默认玩家当前所属俱乐部与国家队；赛事各分类默认所属球队参加的第一项，支持手动切换。阵容按当前联赛归属显示。支持兼容内容增量更新，未进行本轮手机真机验证。
-
-## 关于此仓库
-
-此仓库用于发布 Android 安装包、更新说明和应用内更新元数据，并非游戏源码仓库。
-
-[应用更新元数据](https://github.com/zlw-36/football-android-updates/releases/latest/download/android-update.json)
-
-遇到问题时，可在 [Issues](https://github.com/zlw-36/football-android-updates/issues) 提供游戏版本、手机型号、触发步骤和截图。存档保存在设备本地，请谨慎卸载或清除应用数据。
-
-## 用途与素材声明
-
-本项目用于个人编程学习与交流，不代表任何俱乐部、球员、赛事组织或足球协会的官方产品。
-
-游戏涉及的俱乐部队徽、赛事标识、球员姓名及相关素材，其权利归各自权利人所有。本项目的学习用途声明不构成素材授权；如权利人认为相关内容涉及其权益，可通过本仓库Issues联系处理。未经相应授权，请勿将相关素材用于商业用途。
-
+赛事中心分区、各项赛事的积分与球员榜切换、历史榜单分类统一为单行，可左右滑动。保留原选中状态、数据和比赛规则。兼容原生版本支持内容增量更新，网页版继续停用。
