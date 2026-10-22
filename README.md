@@ -1,3 +1,17 @@
+# 足球 1.16.1 / code67
+
+[下载安卓安装包](https://github.com/zlw-36/football-android-updates/releases/download/v1.16.1/football.apk) · [更新说明](https://github.com/zlw-36/football-android-updates/releases/tag/v1.16.1)
+
+按用户规则调整金童奖：2026年为最后可颁奖年份，2027年起停发，以正式颁奖年份为准。取消旧档尚未结算的后续评选与未确认提名，保留已获荣誉。金球奖和世界足球先生保持，包含1.16.0全部内容。
+
+与1.16.0原生/保存协议兼容，可应用内下载变更内容。相对1.16.0基线：5个变更文件，201902压缩字节（约202KB），1133个文件复用，实际取决于缓存且不含清单/网络开销。先保存生涯，不卸载、不清数据。
+
+完整APK 78,743,505字节；SHA256 `36c581cc692b49684051b98854779539bf26cd007f7a29251be25d35e8c7613d`。已完成桌面及包内资源检查，未真实手机安装/冷启动/实际应用内升级验证，网页版停用。
+
+---
+
+以下保留历史版本说明，以最新版本为准。
+
 # 足球 1.16.0 / code66
 
 [下载安卓安装包](https://github.com/zlw-36/football-android-updates/releases/download/v1.16.0/football.apk) · [更新说明](https://github.com/zlw-36/football-android-updates/releases/tag/v1.16.0)
