@@ -1,5 +1,20 @@
 # 足球 Android 更新
 
+**最新版本：1.17.1 / code69**
+
+[下载足球1.17.1](https://github.com/zlw-36/football-android-updates/releases/download/v1.17.1/football.apk) · [发布页](https://github.com/zlw-36/football-android-updates/releases/tag/v1.17.1)
+
+- 金特技在基础99后继续提高对应属性与上限，取消原105封顶和同分支+8限制。例如终结99叠加两项各+5可以达到109；有效能力也可超出原上限。
+- 每个生涯最多学习5项，自带不占名额；第五项可学，第六项不扣款。旧档已经超额的全部保留，不删除、不重复收费。
+- 普通训练与潜力规则不变，界面区分基础、常规金特技与欧冠能力。转会、换季不重置学习名额。
+- 包含1.17.0全部内容。
+
+与1.17.0原生和保存协议兼容，变更内容约394KB（依设备缓存，不含清单和网络开销），完整APK约78.76MB。先保存生涯，按App提示更新，不卸载、不清数据。已完成桌面规则和生产App五项学习、109显示、付款后IndexedDB重读、安装包核验；未真实手机安装、实际手机增量更新或完整生涯验证。网页版停用。
+
+<details><summary>历史更新说明（原文保留）</summary>
+
+# 足球 Android 更新
+
 **最新版本：1.17.0 / code68**
 
 [下载足球1.17.0](https://github.com/zlw-36/football-android-updates/releases/download/v1.17.0/football.apk) · [发布页](https://github.com/zlw-36/football-android-updates/releases/tag/v1.17.0)
@@ -442,6 +457,9 @@ The Training page medical centre charges €2,000 to shorten one injury by two w
 ## 1.7.4：单行滑动分类
 
 赛事中心分区、各项赛事的积分与球员榜切换、历史榜单分类统一为单行，可左右滑动。保留原选中状态、数据和比赛规则。兼容原生版本支持内容增量更新，网页版继续停用。
+
+
+</details>
 
 
 </details>
