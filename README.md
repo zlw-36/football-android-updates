@@ -1,3 +1,19 @@
+# 足球 Android 更新
+
+**最新版本：1.17.0 / code68**
+
+[下载足球1.17.0](https://github.com/zlw-36/football-android-updates/releases/download/v1.17.0/football.apk) · [发布页](https://github.com/zlw-36/football-android-updates/releases/tag/v1.17.0)
+
+- 32项金特技：传奇与球星可自带多项，训练中心可付费学习，确认有效提升，重复或无效不扣款。
+- 生涯封面显示球员形象；78种位置与贡献称号，收紧一代球王条件。
+- 调整国家队与俱乐部冲突优先级：洲际淘汰赛只保护与国家队预选赛冲突的俱乐部参赛。
+- 预选赛穿插俱乐部赛季，正赛尽量在俱乐部收官后；欧国联各阶段穿插赛季，决赛优先春季，避开欧洲杯。
+- 继承1.16.1全部内容，保留已有统计、荣誉、已赛结果和赛前暂停。
+
+与1.16.1原生和保存协议兼容，变更内容约2.58MB（依缓存，不含清单及网络开销）；完整APK约78.76MB。先保存，按应用提示更新，不卸载、不清数据。桌面规则、界面、实际生产App金特技付款与IndexedDB重新读取、包完整性检查完成；未真实手机安装、实际手机增量更新或完整生涯验收。网页版停用。
+
+<details><summary>历史更新说明（原文保留）</summary>
+
 # 足球 1.16.1 / code67
 
 [下载安卓安装包](https://github.com/zlw-36/football-android-updates/releases/download/v1.16.1/football.apk) · [更新说明](https://github.com/zlw-36/football-android-updates/releases/tag/v1.16.1)
@@ -426,3 +442,6 @@ The Training page medical centre charges €2,000 to shorten one injury by two w
 ## 1.7.4：单行滑动分类
 
 赛事中心分区、各项赛事的积分与球员榜切换、历史榜单分类统一为单行，可左右滑动。保留原选中状态、数据和比赛规则。兼容原生版本支持内容增量更新，网页版继续停用。
+
+
+</details>
