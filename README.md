@@ -1,5 +1,22 @@
 # 足球 Android 更新
 
+**最新版本：1.18.0 / code70**
+
+[下载足球1.18.0](https://github.com/zlw-36/football-android-updates/releases/download/v1.18.0/football.apk) · [发布页](https://github.com/zlw-36/football-android-updates/releases/tag/v1.18.0)
+
+- 分联赛安排冬歇，英超与德甲等分别处理；国家队专属周停止俱乐部比赛，冬季亚洲杯、非洲杯保留冬季。
+- 联赛优先周末，杯赛按日期查空档，允许同周多场；八月底开赛，联赛最迟五月底、洲际及俱乐部杯赛最迟六月底结束。保留全部轮次、已赛结果与旧档待赛事务。
+- 常规金特技提升直接合并到当前能力和六维图；超过100时完整显示，欧冠条件提升单列。普通训练、潜力和学习名额规则保持。
+- 优化赛历日期索引和固定冬歇换算，保留赛前暂停；包含1.17.1全部内容。
+
+与1.17.1原生及保存协议兼容，可在应用内更新变更内容；相对1.17.1约395KB（依设备缓存，不含清单和网络开销），完整APK约78.76MB。先保存生涯，按应用提示更新，不卸载、不清数据。
+
+现实多年的预选赛仍压缩为游戏单赛季，因此有额外国家队周和必要周中联赛。40项回归、13代表赛季完整排程及18组生产版页面检查通过；真机安装、手机内容更新、实际旧档与完整生涯尚未验证。网页版继续停用。
+
+<details><summary>历史更新说明（原文保留）</summary>
+
+# 足球 Android 更新
+
 **最新版本：1.17.1 / code69**
 
 [下载足球1.17.1](https://github.com/zlw-36/football-android-updates/releases/download/v1.17.1/football.apk) · [发布页](https://github.com/zlw-36/football-android-updates/releases/tag/v1.17.1)
@@ -461,5 +478,7 @@ The Training page medical centre charges €2,000 to shorten one injury by two w
 
 </details>
 
+
+</details>
 
 </details>
