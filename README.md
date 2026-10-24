@@ -1,5 +1,21 @@
 # 足球 Android 更新
 
+**最新版本：1.18.1 / code71**
+
+[下载足球1.18.1](https://github.com/zlw-36/football-android-updates/releases/download/v1.18.1/football.apk) · [发布页](https://github.com/zlw-36/football-android-updates/releases/tag/v1.18.1)
+
+- 生涯成就里的多位置经历只列实际比赛中踢过的位置；替补实际出场计入，仅完成特训或排阵未出场不计入。已记录角色随存档、转会、换季及退役保留，旧档仅据保留赛报核实。
+- 再次进入页面回到顶部与默认栏目，复原临时搜索、筛选、排序、分页和展开详情；再次点击当前导航、浏览器前进后退同样复原。
+- 已保存的生涯数据、阵型、合同、目标和导航自定义设置保留；页面代码及图片缓存继续复用。包含1.18.0全部内容。
+
+与1.18.0原生和保存协议兼容，可应用内更新变更内容；相对1.18.0约416KB（依设备缓存，不含清单和网络开销），完整APK约78.76MB。先保存生涯，按应用提示更新，不卸载、不清数据。
+
+源阶段15项位置/出场暂停回归、60项生产App导航检查、桌面存档重载及性能复测通过；发布版再跑60项App检查通过。未真实手机安装、手机内容更新、用户实际旧档或完整生涯验收。网页版继续停用。
+
+<details><summary>历史更新说明（原文保留）</summary>
+
+# 足球 Android 更新
+
 **最新版本：1.18.0 / code70**
 
 [下载足球1.18.0](https://github.com/zlw-36/football-android-updates/releases/download/v1.18.0/football.apk) · [发布页](https://github.com/zlw-36/football-android-updates/releases/tag/v1.18.0)
@@ -478,6 +494,8 @@ The Training page medical centre charges €2,000 to shorten one injury by two w
 
 </details>
 
+
+</details>
 
 </details>
 
