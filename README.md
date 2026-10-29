@@ -1,5 +1,21 @@
 # 足球 Android 更新
 
+当前版本：**1.20.7 / code86**（2026-10-29）。
+
+[下载最新版APK](https://github.com/zlw-36/football-android-updates/releases/download/v1.20.7/football.apk) · [本次更新说明](https://github.com/zlw-36/football-android-updates/releases/tag/v1.20.7)
+
+兼容客户端支持应用内下载变更内容。从1.20.6更新约2.6MB，实际依缓存；完整APK约78.8MB。先保存再更新，不卸载、不清数据、不需重开。
+
+本次让转会申请真正影响洽谈和成交，买断合同移到申请按钮旁边；球场数据适度上调并按实际位置区分终结、创造和防守，高于99仍保留递减收益。旧赛报、累计和荣誉不回算，包含1.20.6及此前全部内容。买断确认快速取消重开的交互也已修复。
+
+448项全量回归及末次修复后的50项相关复查通过，付款/保存/赛报交互、APK签名与内容更新校验完成。桌面小样本和真机效果分开记录，尚未真机安装验证。网页版继续停用。
+
+---
+
+以下为此前发布记录，历史正文保留：
+
+# 足球 Android 更新
+
 当前版本：**1.20.6 / code85**（2026-10-29）。
 
 [下载最新版 APK](https://github.com/zlw-36/football-android-updates/releases/download/v1.20.6/football.apk) · [本次更新说明](https://github.com/zlw-36/football-android-updates/releases/tag/v1.20.6)
