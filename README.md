@@ -1,5 +1,21 @@
 # 足球 Android 更新
 
+当前版本：**1.21.0 / code87**（2026-11-01）。
+
+[下载完整APK](https://github.com/zlw-36/football-android-updates/releases/download/v1.21.0/football.apk) · [本次更新说明](https://github.com/zlw-36/football-android-updates/releases/tag/v1.21.0)
+
+本次含原生方向锁修正，需要先在游戏中保存生涯，再用完整APK覆盖安装；不卸载、不清数据、无需重新开档。完整APK约125.6MB。以后原生兼容版本仍可使用应用内内容更新。
+
+本次扩充国家联赛、球队、国内杯及各洲年度资格和冠军通道，修正国家队资格提示、欧国联跨届分级和名额同分排序；完善转会窗、窗内逐周模拟与申请施压，按球队强弱和实际位置平衡未来比赛。晋级图早期轮次改对阵列表，附加赛保留树状；来源许可页补返回，补充已验收真实队徽、奖杯和漫画领奖图。原有1088图片保持原哈希。
+
+未接入的MLS季后赛、启动分块实验和未确认美术不在本次更新。部分真实赛制仍采用已说明的游戏适配，剩余美术后续补齐。已做本地与包内验证，尚未真机安装测试。网页版继续停用。
+
+---
+
+以下为此前发布记录，历史正文保留：
+
+# 足球 Android 更新
+
 当前版本：**1.20.7 / code86**（2026-10-29）。
 
 [下载最新版APK](https://github.com/zlw-36/football-android-updates/releases/download/v1.20.7/football.apk) · [本次更新说明](https://github.com/zlw-36/football-android-updates/releases/tag/v1.20.7)
